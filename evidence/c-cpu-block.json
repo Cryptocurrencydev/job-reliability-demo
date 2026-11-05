@@ -2,7 +2,7 @@
   "mechanism": "c-cpu-block",
   "title": "Synchronous CPU work blocks the event loop",
   "poolMax": 5,
-  "durationMs": 6929,
+  "durationMs": 6984,
   "outcomes": {
     "ok": 69,
     "poolTimeouts": 33,
@@ -25,9 +25,9 @@
     }
   },
   "eventLoop": {
-    "p50ms": 11,
-    "p99ms": 905.4,
-    "maxMs": 911.2,
+    "p50ms": 10.1,
+    "p99ms": 917.5,
+    "maxMs": 929,
     "heartbeatsLate": 6,
     "heartbeatsTotal": 18
   },
@@ -54,169 +54,169 @@
       "waiting": 0
     },
     {
-      "t": 1154,
+      "t": 1165,
       "total": 5,
       "idle": 0,
       "waiting": 5
     },
     {
-      "t": 1255,
+      "t": 1264,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 1355,
+      "t": 1365,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 2309,
+      "t": 2335,
       "total": 5,
       "idle": 0,
       "waiting": 6
     },
     {
-      "t": 2409,
+      "t": 2434,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 2510,
+      "t": 2536,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 3465,
+      "t": 3510,
       "total": 5,
       "idle": 0,
       "waiting": 6
     },
     {
-      "t": 3566,
+      "t": 3609,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 3666,
+      "t": 3709,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 4618,
+      "t": 4674,
       "total": 5,
       "idle": 0,
       "waiting": 6
     },
     {
-      "t": 4718,
+      "t": 4774,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 4818,
+      "t": 4874,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 5771,
+      "t": 5833,
       "total": 5,
       "idle": 0,
       "waiting": 6
     },
     {
-      "t": 5872,
+      "t": 5933,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 5972,
+      "t": 6033,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 6928,
+      "t": 6984,
       "total": 5,
       "idle": 0,
       "waiting": 5
     },
     {
-      "t": 7029,
+      "t": 7084,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 7129,
+      "t": 7183,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 7230,
+      "t": 7284,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 7330,
+      "t": 7384,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 7431,
+      "t": 7484,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 7531,
+      "t": 7584,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 7632,
+      "t": 7683,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 7732,
+      "t": 7784,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 7832,
+      "t": 7884,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 7933,
+      "t": 7985,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 8034,
+      "t": 8086,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 8134,
+      "t": 8186,
       "total": 5,
       "idle": 5,
       "waiting": 0

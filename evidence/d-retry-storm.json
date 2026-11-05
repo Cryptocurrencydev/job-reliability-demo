@@ -2,16 +2,16 @@
   "mechanism": "d-retry-storm",
   "title": "Timeouts trigger immediate retries that take more connections",
   "poolMax": 5,
-  "durationMs": 4686,
+  "durationMs": 4666,
   "outcomes": {
     "ok": 0,
-    "poolTimeouts": 76,
+    "poolTimeouts": 77,
     "queryTimeouts": 0,
     "otherErrors": 0,
     "attempts": 120,
     "jobs": 20,
-    "paidSubmissions": 44,
-    "paidPerJob": 2.2,
+    "paidSubmissions": 43,
+    "paidPerJob": 2.15,
     "retryAmplification": 6
   },
   "pool": {
@@ -25,9 +25,9 @@
     }
   },
   "eventLoop": {
-    "p50ms": 11,
-    "p99ms": 11.6,
-    "maxMs": 13.9,
+    "p50ms": 10.1,
+    "p99ms": 11.5,
+    "maxMs": 13,
     "heartbeatsLate": 0,
     "heartbeatsTotal": 29
   },
@@ -36,43 +36,43 @@
     "peakIdle": 5,
     "peakActive": 0,
     "peakLockWaits": 0,
-    "oldestXactMs": 499,
-    "snapshots": 57
+    "oldestXactMs": 495,
+    "snapshots": 58
   },
   "recovered": true,
   "timeline": [
     {
-      "t": 100,
+      "t": 101,
       "total": 2,
       "idle": 0,
       "waiting": 0
     },
     {
-      "t": 200,
+      "t": 201,
       "total": 4,
       "idle": 0,
       "waiting": 0
     },
     {
-      "t": 301,
+      "t": 302,
       "total": 5,
       "idle": 0,
       "waiting": 1
     },
     {
-      "t": 401,
+      "t": 402,
       "total": 5,
       "idle": 0,
       "waiting": 3
     },
     {
-      "t": 506,
+      "t": 505,
       "total": 5,
       "idle": 0,
       "waiting": 5
     },
     {
-      "t": 607,
+      "t": 606,
       "total": 5,
       "idle": 0,
       "waiting": 7
@@ -84,307 +84,307 @@
       "waiting": 9
     },
     {
-      "t": 808,
+      "t": 806,
       "total": 5,
       "idle": 0,
       "waiting": 11
     },
     {
-      "t": 909,
+      "t": 907,
       "total": 5,
       "idle": 0,
       "waiting": 13
     },
     {
-      "t": 1009,
+      "t": 1006,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 1109,
+      "t": 1106,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 1210,
+      "t": 1206,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 1310,
+      "t": 1306,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 1410,
+      "t": 1406,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 1510,
+      "t": 1506,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 1611,
+      "t": 1606,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 1712,
+      "t": 1706,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 1812,
+      "t": 1806,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 1912,
+      "t": 1906,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 2012,
+      "t": 2007,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 2113,
+      "t": 2106,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 2214,
+      "t": 2206,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 2315,
+      "t": 2306,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 2415,
+      "t": 2406,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 2515,
+      "t": 2507,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 2615,
+      "t": 2607,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 2715,
+      "t": 2705,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 2816,
+      "t": 2807,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 2916,
+      "t": 2907,
       "total": 5,
       "idle": 0,
       "waiting": 15
     },
     {
-      "t": 3017,
+      "t": 3007,
       "total": 5,
       "idle": 0,
       "waiting": 14
     },
     {
-      "t": 3117,
+      "t": 3108,
       "total": 5,
       "idle": 0,
-      "waiting": 12
+      "waiting": 11
     },
     {
-      "t": 3218,
-      "total": 5,
-      "idle": 0,
-      "waiting": 10
-    },
-    {
-      "t": 3318,
+      "t": 3208,
       "total": 5,
       "idle": 0,
       "waiting": 10
     },
     {
-      "t": 3418,
+      "t": 3308,
+      "total": 5,
+      "idle": 0,
+      "waiting": 10
+    },
+    {
+      "t": 3409,
+      "total": 5,
+      "idle": 0,
+      "waiting": 9
+    },
+    {
+      "t": 3510,
       "total": 5,
       "idle": 0,
       "waiting": 8
     },
     {
-      "t": 3519,
+      "t": 3609,
       "total": 5,
       "idle": 0,
-      "waiting": 6
+      "waiting": 5
     },
     {
-      "t": 3620,
+      "t": 3709,
       "total": 5,
       "idle": 0,
-      "waiting": 4
+      "waiting": 5
     },
     {
-      "t": 3720,
+      "t": 3809,
       "total": 5,
       "idle": 0,
-      "waiting": 4
+      "waiting": 5
     },
     {
-      "t": 3821,
-      "total": 5,
-      "idle": 0,
-      "waiting": 4
-    },
-    {
-      "t": 3922,
+      "t": 3909,
       "total": 5,
       "idle": 0,
       "waiting": 4
     },
     {
-      "t": 4022,
+      "t": 4010,
       "total": 5,
       "idle": 0,
       "waiting": 3
     },
     {
-      "t": 4122,
+      "t": 4110,
       "total": 5,
       "idle": 0,
       "waiting": 0
     },
     {
-      "t": 4223,
-      "total": 5,
-      "idle": 0,
-      "waiting": 0
-    },
-    {
-      "t": 4323,
+      "t": 4211,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 4423,
+      "t": 4311,
       "total": 5,
-      "idle": 1,
+      "idle": 2,
       "waiting": 0
     },
     {
-      "t": 4523,
+      "t": 4411,
       "total": 5,
-      "idle": 1,
+      "idle": 2,
       "waiting": 0
     },
     {
-      "t": 4624,
+      "t": 4511,
       "total": 5,
-      "idle": 3,
+      "idle": 2,
       "waiting": 0
     },
     {
-      "t": 4724,
+      "t": 4611,
       "total": 5,
-      "idle": 5,
+      "idle": 4,
       "waiting": 0
     },
     {
-      "t": 4824,
-      "total": 5,
-      "idle": 5,
-      "waiting": 0
-    },
-    {
-      "t": 4925,
+      "t": 4712,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 5026,
+      "t": 4812,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 5127,
+      "t": 4912,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 5228,
+      "t": 5012,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 5329,
+      "t": 5112,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 5430,
+      "t": 5212,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 5530,
+      "t": 5312,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 5630,
+      "t": 5412,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 5731,
+      "t": 5512,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 5832,
+      "t": 5612,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 5712,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 5813,
       "total": 5,
       "idle": 5,
       "waiting": 0

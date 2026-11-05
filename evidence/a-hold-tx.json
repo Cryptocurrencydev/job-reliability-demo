@@ -2,7 +2,7 @@
   "mechanism": "a-hold-tx",
   "title": "Transaction held open across the provider HTTP call",
   "poolMax": 5,
-  "durationMs": 9062,
+  "durationMs": 9040,
   "outcomes": {
     "ok": 6,
     "poolTimeouts": 24,
@@ -17,7 +17,7 @@
   "pool": {
     "peakWaiting": 14,
     "peakCheckedOut": 5,
-    "samples": 102,
+    "samples": 103,
     "afterLoad": {
       "total": 5,
       "idle": 5,
@@ -25,9 +25,9 @@
     }
   },
   "eventLoop": {
-    "p50ms": 11,
-    "p99ms": 11.5,
-    "maxMs": 16.2,
+    "p50ms": 10.1,
+    "p99ms": 11.3,
+    "maxMs": 13.5,
     "heartbeatsLate": 0,
     "heartbeatsTotal": 51
   },
@@ -36,621 +36,627 @@
     "peakIdle": 5,
     "peakActive": 4,
     "peakLockWaits": 4,
-    "oldestXactMs": 8777,
-    "snapshots": 99
+    "oldestXactMs": 8778,
+    "snapshots": 102
   },
   "recovered": true,
   "timeline": [
     {
-      "t": 101,
+      "t": 100,
       "total": 2,
       "idle": 0,
       "waiting": 0
     },
     {
-      "t": 202,
+      "t": 200,
       "total": 4,
       "idle": 0,
       "waiting": 0
     },
     {
-      "t": 301,
+      "t": 300,
       "total": 5,
       "idle": 0,
       "waiting": 0
     },
     {
-      "t": 402,
+      "t": 400,
       "total": 5,
       "idle": 0,
       "waiting": 2
     },
     {
-      "t": 504,
+      "t": 500,
       "total": 5,
       "idle": 0,
       "waiting": 4
     },
     {
-      "t": 605,
+      "t": 600,
       "total": 5,
       "idle": 0,
       "waiting": 5
     },
     {
-      "t": 705,
+      "t": 700,
       "total": 5,
       "idle": 0,
       "waiting": 7
     },
     {
-      "t": 806,
+      "t": 800,
       "total": 5,
       "idle": 0,
       "waiting": 9
     },
     {
-      "t": 906,
+      "t": 901,
       "total": 5,
       "idle": 0,
       "waiting": 10
     },
     {
-      "t": 1007,
+      "t": 1001,
       "total": 5,
       "idle": 0,
       "waiting": 12
     },
     {
-      "t": 1106,
-      "total": 5,
-      "idle": 0,
-      "waiting": 13
-    },
-    {
-      "t": 1206,
-      "total": 5,
-      "idle": 0,
-      "waiting": 13
-    },
-    {
-      "t": 1308,
-      "total": 5,
-      "idle": 0,
-      "waiting": 13
-    },
-    {
-      "t": 1407,
+      "t": 1102,
       "total": 5,
       "idle": 0,
       "waiting": 14
     },
     {
-      "t": 1519,
+      "t": 1201,
       "total": 5,
       "idle": 0,
       "waiting": 13
     },
     {
-      "t": 1620,
+      "t": 1301,
       "total": 5,
       "idle": 0,
       "waiting": 13
     },
     {
-      "t": 1720,
+      "t": 1402,
+      "total": 5,
+      "idle": 0,
+      "waiting": 14
+    },
+    {
+      "t": 1501,
       "total": 5,
       "idle": 0,
       "waiting": 13
     },
     {
-      "t": 1821,
+      "t": 1601,
       "total": 5,
       "idle": 0,
       "waiting": 13
     },
     {
-      "t": 1921,
+      "t": 1701,
+      "total": 5,
+      "idle": 0,
+      "waiting": 14
+    },
+    {
+      "t": 1801,
+      "total": 5,
+      "idle": 0,
+      "waiting": 13
+    },
+    {
+      "t": 1901,
       "total": 5,
       "idle": 0,
       "waiting": 11
     },
     {
-      "t": 2021,
+      "t": 2001,
       "total": 5,
       "idle": 0,
-      "waiting": 9
+      "waiting": 10
     },
     {
-      "t": 2121,
+      "t": 2101,
       "total": 5,
       "idle": 0,
       "waiting": 8
     },
     {
-      "t": 2220,
+      "t": 2201,
       "total": 5,
       "idle": 0,
       "waiting": 6
     },
     {
-      "t": 2321,
+      "t": 2301,
       "total": 5,
       "idle": 0,
-      "waiting": 4
+      "waiting": 5
     },
     {
-      "t": 2423,
+      "t": 2402,
       "total": 5,
       "idle": 0,
       "waiting": 3
     },
     {
-      "t": 2523,
+      "t": 2502,
       "total": 5,
       "idle": 0,
       "waiting": 1
     },
     {
-      "t": 2624,
+      "t": 2603,
       "total": 5,
       "idle": 0,
       "waiting": 0
     },
     {
-      "t": 2725,
+      "t": 2702,
       "total": 5,
       "idle": 0,
       "waiting": 0
     },
     {
-      "t": 2825,
+      "t": 2802,
       "total": 5,
       "idle": 0,
       "waiting": 0
     },
     {
-      "t": 2926,
+      "t": 2902,
       "total": 5,
       "idle": 0,
       "waiting": 0
     },
     {
-      "t": 3026,
+      "t": 3002,
       "total": 5,
       "idle": 0,
       "waiting": 0
     },
     {
-      "t": 3126,
+      "t": 3103,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 3227,
+      "t": 3202,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 3327,
+      "t": 3302,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 3427,
+      "t": 3402,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 3527,
+      "t": 3503,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 3626,
+      "t": 3602,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 3727,
+      "t": 3702,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 3827,
+      "t": 3802,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 3927,
+      "t": 3902,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 4028,
+      "t": 4002,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 4128,
+      "t": 4103,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 4228,
+      "t": 4203,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 4329,
+      "t": 4303,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 4429,
+      "t": 4404,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 4529,
+      "t": 4503,
       "total": 5,
       "idle": 1,
       "waiting": 0
     },
     {
-      "t": 4630,
+      "t": 4603,
       "total": 5,
       "idle": 2,
       "waiting": 0
     },
     {
-      "t": 4731,
+      "t": 4703,
       "total": 5,
       "idle": 2,
       "waiting": 0
     },
     {
-      "t": 4831,
+      "t": 4803,
       "total": 5,
       "idle": 2,
       "waiting": 0
     },
     {
-      "t": 4932,
+      "t": 4904,
       "total": 5,
       "idle": 2,
       "waiting": 0
     },
     {
-      "t": 5033,
+      "t": 5004,
       "total": 5,
       "idle": 2,
       "waiting": 0
     },
     {
-      "t": 5134,
+      "t": 5104,
       "total": 5,
       "idle": 2,
       "waiting": 0
     },
     {
-      "t": 5235,
+      "t": 5204,
       "total": 5,
       "idle": 2,
       "waiting": 0
     },
     {
-      "t": 5335,
+      "t": 5304,
       "total": 5,
       "idle": 2,
       "waiting": 0
     },
     {
-      "t": 5435,
+      "t": 5404,
       "total": 5,
       "idle": 2,
       "waiting": 0
     },
     {
-      "t": 5534,
+      "t": 5504,
       "total": 5,
       "idle": 2,
       "waiting": 0
     },
     {
-      "t": 5635,
+      "t": 5604,
       "total": 5,
       "idle": 2,
       "waiting": 0
     },
     {
-      "t": 5736,
+      "t": 5704,
       "total": 5,
       "idle": 2,
       "waiting": 0
     },
     {
-      "t": 5836,
+      "t": 5804,
       "total": 5,
       "idle": 2,
       "waiting": 0
     },
     {
-      "t": 5936,
+      "t": 5905,
       "total": 5,
       "idle": 2,
       "waiting": 0
     },
     {
-      "t": 6038,
+      "t": 6005,
       "total": 5,
       "idle": 2,
       "waiting": 0
     },
     {
-      "t": 6139,
+      "t": 6105,
       "total": 5,
       "idle": 3,
       "waiting": 0
     },
     {
-      "t": 6239,
+      "t": 6205,
       "total": 5,
       "idle": 3,
       "waiting": 0
     },
     {
-      "t": 6339,
+      "t": 6305,
       "total": 5,
       "idle": 3,
       "waiting": 0
     },
     {
-      "t": 6440,
+      "t": 6405,
       "total": 5,
       "idle": 3,
       "waiting": 0
     },
     {
-      "t": 6541,
+      "t": 6506,
       "total": 5,
       "idle": 3,
       "waiting": 0
     },
     {
-      "t": 6642,
+      "t": 6605,
       "total": 5,
       "idle": 3,
       "waiting": 0
     },
     {
-      "t": 6743,
+      "t": 6705,
       "total": 5,
       "idle": 3,
       "waiting": 0
     },
     {
-      "t": 6843,
+      "t": 6805,
       "total": 5,
       "idle": 3,
       "waiting": 0
     },
     {
-      "t": 6944,
+      "t": 6905,
       "total": 5,
       "idle": 3,
       "waiting": 0
     },
     {
-      "t": 7044,
+      "t": 7005,
       "total": 5,
       "idle": 3,
       "waiting": 0
     },
     {
-      "t": 7145,
+      "t": 7106,
       "total": 5,
       "idle": 3,
       "waiting": 0
     },
     {
-      "t": 7245,
+      "t": 7205,
       "total": 5,
       "idle": 3,
       "waiting": 0
     },
     {
-      "t": 7346,
+      "t": 7306,
       "total": 5,
       "idle": 3,
       "waiting": 0
     },
     {
-      "t": 7446,
+      "t": 7405,
       "total": 5,
       "idle": 3,
       "waiting": 0
     },
     {
-      "t": 7549,
+      "t": 7505,
       "total": 5,
       "idle": 3,
       "waiting": 0
     },
     {
-      "t": 7649,
+      "t": 7605,
       "total": 5,
       "idle": 4,
       "waiting": 0
     },
     {
-      "t": 7748,
+      "t": 7705,
       "total": 5,
       "idle": 4,
       "waiting": 0
     },
     {
-      "t": 7848,
+      "t": 7804,
       "total": 5,
       "idle": 4,
       "waiting": 0
     },
     {
-      "t": 7949,
+      "t": 7904,
       "total": 5,
       "idle": 4,
       "waiting": 0
     },
     {
-      "t": 8049,
+      "t": 8006,
       "total": 5,
       "idle": 4,
       "waiting": 0
     },
     {
-      "t": 8150,
+      "t": 8107,
       "total": 5,
       "idle": 4,
       "waiting": 0
     },
     {
-      "t": 8250,
+      "t": 8206,
       "total": 5,
       "idle": 4,
       "waiting": 0
     },
     {
-      "t": 8352,
+      "t": 8306,
       "total": 5,
       "idle": 4,
       "waiting": 0
     },
     {
-      "t": 8452,
+      "t": 8406,
       "total": 5,
       "idle": 4,
       "waiting": 0
     },
     {
-      "t": 8553,
+      "t": 8507,
       "total": 5,
       "idle": 4,
       "waiting": 0
     },
     {
-      "t": 8654,
+      "t": 8608,
       "total": 5,
       "idle": 4,
       "waiting": 0
     },
     {
-      "t": 8753,
+      "t": 8708,
       "total": 5,
       "idle": 4,
       "waiting": 0
     },
     {
-      "t": 8854,
+      "t": 8809,
       "total": 5,
       "idle": 4,
       "waiting": 0
     },
     {
-      "t": 8954,
+      "t": 8909,
       "total": 5,
       "idle": 4,
       "waiting": 0
     },
     {
-      "t": 9054,
+      "t": 9010,
       "total": 5,
       "idle": 4,
       "waiting": 0
     },
     {
-      "t": 9155,
+      "t": 9110,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 9256,
+      "t": 9210,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 9356,
+      "t": 9311,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 9457,
+      "t": 9410,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 9557,
+      "t": 9511,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 9659,
+      "t": 9611,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 9759,
+      "t": 9710,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 9860,
+      "t": 9811,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 9962,
+      "t": 9911,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 10063,
+      "t": 10012,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 10163,
+      "t": 10112,
       "total": 5,
       "idle": 5,
       "waiting": 0
     },
     {
-      "t": 10264,
+      "t": 10211,
       "total": 5,
-      "idle": 4,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 10313,
+      "total": 5,
+      "idle": 5,
       "waiting": 0
     }
   ]
