@@ -1,7 +1,7 @@
 {
   "safe": {
     "peakWaiting": 16,
-    "meanWaiting": 2.56,
+    "meanWaiting": 2.44,
     "peakIdleInTx": 0,
     "peakProviderInFlight": 20,
     "failed": 0,
@@ -12,7 +12,7 @@
   },
   "broken": {
     "peakWaiting": 16,
-    "meanWaiting": 14.83,
+    "meanWaiting": 14.84,
     "peakIdleInTx": 4,
     "peakProviderInFlight": 4,
     "failed": 36,
