@@ -62,8 +62,14 @@ jobs:
         run: |
           git config user.name "Cryptocurrencydev"
           git config user.email "Cryptocurrencydev@users.noreply.github.com"
+          # These files are generated, so never merge them: take the newest main, then
+          # lay this run's output over it. If two runs overlap, the later one wins.
+          mkdir -p "$RUNNER_TEMP/out"
+          cp -R site results evidence "$RUNNER_TEMP/out/"
+          git fetch origin main
+          git reset --hard origin/main
+          cp -R "$RUNNER_TEMP/out/." .
           git add site results evidence
           git diff --cached --quiet && exit 0
           git commit -m "Update results from CI run ${{ github.run_number }} [skip ci]"
-          git pull --rebase origin main
           git push origin HEAD:main
