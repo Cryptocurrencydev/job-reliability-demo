@@ -10,4 +10,6 @@ Times are WAT, 5 Nov 2026.
 | 19:24 | 19:28 | Test suites | Unknown outcomes, ledger, pool, pg-boss, broken mode, property |
 | 19:28 | 19:45 | Mutation check | First result (10/10 in 4 seconds) was false: a syntax error failed every run. Added a green-baseline gate, then found a failing test could strand a paused worker and hang the run |
 | 19:30 | 19:45 | Playbook, readme, CI, results page | Production default changed to `flag` after the readme and config disagreed |
-| 19:45 | 20:05 | Push, CI and deploy | gitleaks clean. CI runs: first failed because colour codes hid the pass count from the mutation gate; second green; third passed tests but its publish step conflicted with the second, fixed by never merging generated files. Vercel CLI API blocked, so imported through the dashboard |
+| 19:45 | 20:06 | Push, CI and deploy | gitleaks clean. CI runs: first failed because colour codes hid the pass count from the mutation gate; second green; third passed tests but its publish step conflicted with the second, fixed by never merging generated files. Vercel CLI API blocked, so imported through the dashboard |
+
+Total: about 1 hour.
