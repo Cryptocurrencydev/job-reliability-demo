@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tunesmith job reliability results</title>
+<meta name="description" content="Test evidence that paid music generation jobs are never lost and never charged twice, across real process kills.">
+<style>
+:root{--ink:#17181c;--mute:#5d616b;--line:#dcdde1;--paper:#fbfaf7;--card:#fff;--good:#0b6b4f;--bad:#b3261e;--accent:#3d3a8c}
+@media (prefers-color-scheme:dark){:root{--ink:#ecebe6;--mute:#a2a5ae;--line:#33353c;--paper:#141519;--card:#1b1c21;--good:#55c9a0;--bad:#f2857c;--accent:#a9a6f2}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:920px;margin:0 auto;padding:48px 16px 32px}
+h1{font:600 clamp(28px,5vw,40px)/1.15 ui-serif,Georgia,serif;margin:8px 0 14px;letter-spacing:-.01em}
+h2{font:600 22px/1.25 ui-serif,Georgia,serif;margin:52px 0 6px}
+p{margin:0 0 12px;max-width:68ch}
+.eyebrow{font:600 12px/1 ui-monospace,Menlo,monospace;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+.mute{color:var(--mute)}
+.small{font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:28px 0 0}
+.stat{background:var(--card);padding:16px}
+.stat b{display:block;font:600 30px/1.1 ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;color:var(--mute)}
+.scroll{overflow-x:auto;margin-top:14px}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:560px}
+th,td{text-align:left;padding:9px 12px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:13px;font-weight:600;color:var(--mute)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;font-family:ui-monospace,Menlo,monospace;padding-left:12px;padding-right:0}
+.good{color:var(--good);font-weight:600}.bad{color:var(--bad);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:14px}
+.card{background:var(--card);border:1px solid var(--line);padding:14px 16px}
+.card h3{margin:0 0 6px;font-size:15px;line-height:1.35}
+.card svg{display:block;width:100%;height:44px;color:var(--accent);margin:8px 0}
+.card dl{display:grid;grid-template-columns:1fr auto;gap:2px 12px;margin:0;font-size:14px}
+.card dt{color:var(--mute)}.card dd{margin:0;font-family:ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+ul.plain{list-style:none;padding:0;margin:12px 0 0;font-size:15px}
+ul.plain li{padding:6px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+a{color:var(--accent)}
+footer{max-width:920px;margin:0 auto;padding:24px 16px 48px;font-size:14px;color:var(--mute);border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">Tunesmith, a fictional AI music app</div>
+<h1>No job lost. No job paid for twice.</h1>
+<p>Workers were killed at every step of a paid music generation job, then restarted. This page is generated from the raw output of the latest test run, including the runs where the protections were deliberately switched off.</p>
+<p class="mute small">Run 2026-11-05 18:45 UTC. <a href="https://github.com/Cryptocurrencydev/job-reliability-demo">Source and playbook</a>.</p>
+
+<div class="stats">
+  <div class="stat"><b class="good">88/88</b><span>tests passed</span></div>
+  <div class="stat"><b>61</b><span>real SIGKILLs in the property test</span></div>
+  <div class="stat"><b>90</b><span>random jobs, 15 scenarios</span></div>
+  <div class="stat"><b>10/10</b><span>safeguards removed and caught</span></div>
+</div>
+
+<h2>The same failure, with and without the design</h2>
+<p class="mute">Both columns ran the same scenario and were judged by the same check.</p>
+<div class="scroll"><table>
+<thead><tr><th>Scenario</th><th>Broken mode</th><th class="n">Charges</th><th>Safe design</th><th class="n">Charges</th></tr></thead>
+<tbody><tr><td>Worker killed right after paying, pg-boss retries on</td><td class="">completed</td><td class="n bad">2</td><td class="good">completed</td><td class="n good">1</td></tr><tr><td>Worker killed right after paying, pg-boss retries off</td><td class="bad">stuck in queued</td><td class="n ">1</td><td class="good">completed</td><td class="n good">1</td></tr><tr><td>Provider charges, then never answers</td><td class="bad">stuck in queued</td><td class="n bad">4</td><td class="good">completed</td><td class="n good">1</td></tr></tbody>
+</table></div>
+
+<h2>Connection pool under load</h2>
+<p class="mute">60 jobs, 20 at a time, on a pool of 4 connections.</p>
+<div class="scroll"><table>
+<thead><tr><th>Measure</th><th class="n">Broken</th><th class="n">Safe</th></tr></thead>
+<tbody>
+<tr><td>Jobs completed</td><td class="n bad">24</td><td class="n good">60</td></tr>
+<tr><td>Jobs that hit a connection timeout</td><td class="n bad">36</td><td class="n good">0</td></tr>
+<tr><td>Provider calls in flight at once, peak</td><td class="n">4</td><td class="n">20</td></tr>
+<tr><td>Connections idle in transaction, peak</td><td class="n bad">4</td><td class="n good">0</td></tr>
+<tr><td>Pool waiting count, average</td><td class="n">14.8</td><td class="n">1.96</td></tr>
+<tr><td>Pool waiting count, peak</td><td class="n">16</td><td class="n">16</td></tr>
+</tbody></table></div>
+<p class="mute small" style="margin-top:12px">Safe mode has more provider calls in flight than connections exist, so none of those calls can be holding one.</p>
+
+<h2>Four ways to get the same symptoms</h2>
+<p class="mute">Each mechanism reproduced on purpose. The line is the number of requests waiting for a connection. The differences between these cards are how you tell them apart in a real incident.</p>
+<div class="grid"><div class="card"><h3>Transaction held open across the provider HTTP call</h3><svg viewBox="0 0 220 44" role="img" aria-label="Pool waiting count over 10 seconds, peak 14"><polyline points="2.2,43.0 4.3,43.0 6.5,43.0 8.6,37.4 10.8,31.8 13.0,29.0 15.1,23.4 17.3,17.8 19.4,15.0 21.6,9.4 23.7,6.6 25.8,6.6 28.0,6.6 30.2,3.8 32.6,6.6 34.7,6.6 36.9,6.6 39.0,6.6 41.2,12.2 43.3,17.8 45.5,20.6 47.6,26.2 49.7,31.8 51.9,34.6 54.1,40.2 56.2,43.0 58.4,43.0 60.6,43.0 62.7,43.0 64.9,43.0 67.0,43.0 69.2,43.0 71.3,43.0 73.5,43.0 75.6,43.0 77.7,43.0 79.9,43.0 82.0,43.0 84.2,43.0 86.3,43.0 88.5,43.0 90.6,43.0 92.8,43.0 94.9,43.0 97.1,43.0 99.2,43.0 101.4,43.0 103.5,43.0 105.7,43.0 107.9,43.0 110.0,43.0 112.2,43.0 114.4,43.0 116.5,43.0 118.6,43.0 120.8,43.0 122.9,43.0 125.1,43.0 127.2,43.0 129.4,43.0 131.6,43.0 133.7,43.0 135.9,43.0 138.0,43.0 140.2,43.0 142.4,43.0 144.5,43.0 146.7,43.0 148.8,43.0 151.0,43.0 153.1,43.0 155.3,43.0 157.5,43.0 159.6,43.0 161.8,43.0 163.9,43.0 166.1,43.0 168.2,43.0 170.4,43.0 172.5,43.0 174.7,43.0 176.8,43.0 179.0,43.0 181.2,43.0 183.3,43.0 185.5,43.0 187.6,43.0 189.8,43.0 191.9,43.0 194.1,43.0 196.2,43.0 198.4,43.0 200.5,43.0 202.7,43.0 204.8,43.0 207.0,43.0 209.2,43.0 211.3,43.0 213.5,43.0 215.7,43.0 217.8,43.0 220.0,43.0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><dl>
+<dt>Timeouts</dt><dd>24</dd>
+<dt>Healed without restart</dt><dd class="">yes</dd>
+<dt>Idle in transaction, peak</dt><dd>1</dd>
+<dt>Lock waits, peak</dt><dd>4</dd>
+<dt>Event loop p99</dt><dd>11.5ms</dd>
+<dt>Paid per job</dt><dd>0.2</dd>
+</dl></div><div class="card"><h3>Connection leak on an error path</h3><svg viewBox="0 0 220 44" role="img" aria-label="Pool waiting count over 5 seconds, peak 14"><polyline points="4.5,43.0 9.0,43.0 13.4,43.0 17.9,43.0 22.4,43.0 26.9,43.0 31.4,43.0 35.9,40.2 40.4,37.4 44.9,31.8 49.4,26.2 53.9,23.4 58.3,17.8 62.8,12.2 67.3,9.4 71.8,6.6 76.3,3.8 80.7,6.6 85.2,6.6 89.7,3.8 94.2,6.6 98.7,9.4 103.1,12.2 107.6,17.8 112.1,23.4 116.6,26.2 121.1,31.8 125.6,37.4 130.1,40.2 134.6,43.0 139.1,43.0 143.7,43.0 148.1,43.0 152.6,43.0 157.1,43.0 161.6,43.0 166.0,43.0 170.6,43.0 175.0,43.0 179.5,43.0 184.0,43.0 188.5,40.2 193.0,40.2 197.5,40.2 202.0,40.2 206.5,40.2 211.0,40.2 215.5,40.2 220.0,43.0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><dl>
+<dt>Timeouts</dt><dd>23</dd>
+<dt>Healed without restart</dt><dd class="bad">no</dd>
+<dt>Idle in transaction, peak</dt><dd>0</dd>
+<dt>Lock waits, peak</dt><dd>0</dd>
+<dt>Event loop p99</dt><dd>11.6ms</dd>
+<dt>Paid per job</dt><dd>0.22</dd>
+</dl></div><div class="card"><h3>Synchronous CPU work blocks the event loop</h3><svg viewBox="0 0 220 44" role="img" aria-label="Pool waiting count over 8 seconds, peak 6"><polyline points="2.7,43.0 5.4,43.0 31.2,29.0 33.9,43.0 36.6,43.0 62.5,26.2 65.2,43.0 67.9,43.0 93.7,26.2 96.4,43.0 99.2,43.0 124.9,26.2 127.6,43.0 130.3,43.0 156.1,26.2 158.8,43.0 161.5,43.0 187.4,29.0 190.1,43.0 192.8,43.0 195.5,43.0 198.3,43.0 201.0,43.0 203.7,43.0 206.4,43.0 209.1,43.0 211.8,43.0 214.6,43.0 217.3,43.0 220.0,43.0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><dl>
+<dt>Timeouts</dt><dd>33</dd>
+<dt>Healed without restart</dt><dd class="">yes</dd>
+<dt>Idle in transaction, peak</dt><dd>0</dd>
+<dt>Lock waits, peak</dt><dd>0</dd>
+<dt>Event loop p99</dt><dd>905.4ms</dd>
+<dt>Paid per job</dt><dd>0</dd>
+</dl></div><div class="card"><h3>Timeouts trigger immediate retries that take more connections</h3><svg viewBox="0 0 220 44" role="img" aria-label="Pool waiting count over 6 seconds, peak 15"><polyline points="3.8,43.0 7.5,43.0 11.4,40.2 15.1,34.6 19.1,29.0 22.9,23.4 26.7,17.8 30.5,12.2 34.3,6.6 38.1,1.0 41.8,1.0 45.6,1.0 49.4,1.0 53.2,1.0 57.0,1.0 60.8,1.0 64.6,1.0 68.4,1.0 72.1,1.0 75.9,1.0 79.7,1.0 83.5,1.0 87.3,1.0 91.1,1.0 94.9,1.0 98.6,1.0 102.4,1.0 106.2,1.0 110.0,1.0 113.8,3.8 117.6,9.4 121.4,15.0 125.2,15.0 128.9,20.6 132.7,26.2 136.6,31.8 140.3,31.8 144.1,31.8 147.9,31.8 151.7,34.6 155.5,43.0 159.3,43.0 163.1,43.0 166.8,43.0 170.6,43.0 174.4,43.0 178.2,43.0 182.0,43.0 185.8,43.0 189.6,43.0 193.4,43.0 197.2,43.0 201.0,43.0 204.8,43.0 208.6,43.0 212.4,43.0 216.2,43.0 220.0,43.0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><dl>
+<dt>Timeouts</dt><dd>76</dd>
+<dt>Healed without restart</dt><dd class="">yes</dd>
+<dt>Idle in transaction, peak</dt><dd>5</dd>
+<dt>Lock waits, peak</dt><dd>0</dd>
+<dt>Event loop p99</dt><dd>11.6ms</dd>
+<dt>Paid per job</dt><dd>2.2</dd>
+</dl></div></div>
+
+<h2>Do the tests protect anything?</h2>
+<p class="mute">Each safeguard was removed in turn. Its test had to pass first, then fail with the safeguard gone.</p>
+<ul class="plain"><li><span>Fencing removed from worker writes</span><span class="good">caught</span></li><li><span>Claim ignores a live lease</span><span class="good">caught</span></li><li><span>Local lease deadline check removed before the paid call</span><span class="good">caught</span></li><li><span>Crash recovery resends instead of looking up</span><span class="good">caught</span></li><li><span>Settle window removed</span><span class="good">caught</span></li><li><span>Lookup outage treated as &quot;not found&quot;</span><span class="good">caught</span></li><li><span>5xx treated as a definite rejection</span><span class="good">caught</span></li><li><span>Resend attempts uncapped</span><span class="good">caught</span></li><li><span>Sweeper stops re-dispatching stale jobs</span><span class="good">caught</span></li><li><span>Connection held across the paid call</span><span class="good">caught</span></li></ul>
+
+<h2>Test suites</h2>
+<div class="scroll"><table>
+<thead><tr><th>Suite</th><th class="n">Passed</th></tr></thead>
+<tbody><tr><td>Chaos: SIGKILL and SIGSTOP on real worker processes</td><td class="n good">11/11</td></tr><tr><td>Property: random kills and provider behaviour</td><td class="n good">1/1</td></tr><tr><td>Broken mode against safe mode</td><td class="n good">6/6</td></tr><tr><td>Connection pool under load</td><td class="n good">4/4</td></tr><tr><td>pg-boss retries, expiry and singletonKey</td><td class="n good">6/6</td></tr><tr><td>Unknown outcomes and reconciliation</td><td class="n good">14/14</td></tr><tr><td>State machine, leases and fencing</td><td class="n good">42/42</td></tr><tr><td>Incident fingerprints A to D</td><td class="n good">4/4</td></tr></tbody>
+</table></div>
+
+<h2>What this does not prove</h2>
+<p>Everything here ran against a mock provider and a test database, not a real provider or a real incident. If a provider records a request later than the settle window and also does not dedupe on the idempotency key, an automatic resend can still charge twice. A test pins that case, and the readme explains the two ways to close it.</p>
+</main>
+<footer>Demo by <a href="https://dctechltd.com">DC Tech</a></footer>
+</body>
+</html>

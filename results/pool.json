@@ -1,0 +1,24 @@
+{
+  "safe": {
+    "peakWaiting": 16,
+    "meanWaiting": 1.96,
+    "peakIdleInTx": 0,
+    "peakProviderInFlight": 20,
+    "failed": 0,
+    "completed": 60,
+    "poolMax": 4,
+    "concurrency": 20,
+    "jobs": 60
+  },
+  "broken": {
+    "peakWaiting": 16,
+    "meanWaiting": 14.8,
+    "peakIdleInTx": 4,
+    "peakProviderInFlight": 4,
+    "failed": 36,
+    "completed": 24,
+    "poolMax": 4,
+    "concurrency": 20,
+    "jobs": 60
+  }
+}

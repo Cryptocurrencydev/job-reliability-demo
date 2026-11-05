@@ -1,0 +1,393 @@
+{
+  "mechanism": "d-retry-storm",
+  "title": "Timeouts trigger immediate retries that take more connections",
+  "poolMax": 5,
+  "durationMs": 4686,
+  "outcomes": {
+    "ok": 0,
+    "poolTimeouts": 76,
+    "queryTimeouts": 0,
+    "otherErrors": 0,
+    "attempts": 120,
+    "jobs": 20,
+    "paidSubmissions": 44,
+    "paidPerJob": 2.2,
+    "retryAmplification": 6
+  },
+  "pool": {
+    "peakWaiting": 15,
+    "peakCheckedOut": 5,
+    "samples": 58,
+    "afterLoad": {
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    }
+  },
+  "eventLoop": {
+    "p50ms": 11,
+    "p99ms": 11.6,
+    "maxMs": 13.9,
+    "heartbeatsLate": 0,
+    "heartbeatsTotal": 29
+  },
+  "pgStatActivity": {
+    "peakIdleInTransaction": 5,
+    "peakIdle": 5,
+    "peakActive": 0,
+    "peakLockWaits": 0,
+    "oldestXactMs": 499,
+    "snapshots": 57
+  },
+  "recovered": true,
+  "timeline": [
+    {
+      "t": 100,
+      "total": 2,
+      "idle": 0,
+      "waiting": 0
+    },
+    {
+      "t": 200,
+      "total": 4,
+      "idle": 0,
+      "waiting": 0
+    },
+    {
+      "t": 301,
+      "total": 5,
+      "idle": 0,
+      "waiting": 1
+    },
+    {
+      "t": 401,
+      "total": 5,
+      "idle": 0,
+      "waiting": 3
+    },
+    {
+      "t": 506,
+      "total": 5,
+      "idle": 0,
+      "waiting": 5
+    },
+    {
+      "t": 607,
+      "total": 5,
+      "idle": 0,
+      "waiting": 7
+    },
+    {
+      "t": 707,
+      "total": 5,
+      "idle": 0,
+      "waiting": 9
+    },
+    {
+      "t": 808,
+      "total": 5,
+      "idle": 0,
+      "waiting": 11
+    },
+    {
+      "t": 909,
+      "total": 5,
+      "idle": 0,
+      "waiting": 13
+    },
+    {
+      "t": 1009,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 1109,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 1210,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 1310,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 1410,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 1510,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 1611,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 1712,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 1812,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 1912,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 2012,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 2113,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 2214,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 2315,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 2415,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 2515,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 2615,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 2715,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 2816,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 2916,
+      "total": 5,
+      "idle": 0,
+      "waiting": 15
+    },
+    {
+      "t": 3017,
+      "total": 5,
+      "idle": 0,
+      "waiting": 14
+    },
+    {
+      "t": 3117,
+      "total": 5,
+      "idle": 0,
+      "waiting": 12
+    },
+    {
+      "t": 3218,
+      "total": 5,
+      "idle": 0,
+      "waiting": 10
+    },
+    {
+      "t": 3318,
+      "total": 5,
+      "idle": 0,
+      "waiting": 10
+    },
+    {
+      "t": 3418,
+      "total": 5,
+      "idle": 0,
+      "waiting": 8
+    },
+    {
+      "t": 3519,
+      "total": 5,
+      "idle": 0,
+      "waiting": 6
+    },
+    {
+      "t": 3620,
+      "total": 5,
+      "idle": 0,
+      "waiting": 4
+    },
+    {
+      "t": 3720,
+      "total": 5,
+      "idle": 0,
+      "waiting": 4
+    },
+    {
+      "t": 3821,
+      "total": 5,
+      "idle": 0,
+      "waiting": 4
+    },
+    {
+      "t": 3922,
+      "total": 5,
+      "idle": 0,
+      "waiting": 4
+    },
+    {
+      "t": 4022,
+      "total": 5,
+      "idle": 0,
+      "waiting": 3
+    },
+    {
+      "t": 4122,
+      "total": 5,
+      "idle": 0,
+      "waiting": 0
+    },
+    {
+      "t": 4223,
+      "total": 5,
+      "idle": 0,
+      "waiting": 0
+    },
+    {
+      "t": 4323,
+      "total": 5,
+      "idle": 1,
+      "waiting": 0
+    },
+    {
+      "t": 4423,
+      "total": 5,
+      "idle": 1,
+      "waiting": 0
+    },
+    {
+      "t": 4523,
+      "total": 5,
+      "idle": 1,
+      "waiting": 0
+    },
+    {
+      "t": 4624,
+      "total": 5,
+      "idle": 3,
+      "waiting": 0
+    },
+    {
+      "t": 4724,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 4824,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 4925,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 5026,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 5127,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 5228,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 5329,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 5430,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 5530,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 5630,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 5731,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 5832,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    }
+  ]
+}

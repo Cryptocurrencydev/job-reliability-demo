@@ -1,0 +1,10 @@
+{
+  "latest": {
+    "scenarios": 15,
+    "jobs": 90,
+    "killsPlanned": 79,
+    "realSigkills": 61,
+    "paidSubmissions": 73,
+    "seed": 755348753
+  }
+}

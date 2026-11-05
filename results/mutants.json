@@ -1,0 +1,46 @@
+{
+  "total": 10,
+  "caught": 10,
+  "results": [
+    {
+      "name": "Fencing removed from worker writes",
+      "killed": true
+    },
+    {
+      "name": "Claim ignores a live lease",
+      "killed": true
+    },
+    {
+      "name": "Local lease deadline check removed before the paid call",
+      "killed": true
+    },
+    {
+      "name": "Crash recovery resends instead of looking up",
+      "killed": true
+    },
+    {
+      "name": "Settle window removed",
+      "killed": true
+    },
+    {
+      "name": "Lookup outage treated as \"not found\"",
+      "killed": true
+    },
+    {
+      "name": "5xx treated as a definite rejection",
+      "killed": true
+    },
+    {
+      "name": "Resend attempts uncapped",
+      "killed": true
+    },
+    {
+      "name": "Sweeper stops re-dispatching stale jobs",
+      "killed": true
+    },
+    {
+      "name": "Connection held across the paid call",
+      "killed": true
+    }
+  ]
+}

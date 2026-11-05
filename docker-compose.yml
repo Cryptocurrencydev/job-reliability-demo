@@ -1,0 +1,17 @@
+# Local Postgres 16 for the demo. Throwaway credentials, bound to localhost only.
+services:
+  postgres:
+    image: public.ecr.aws/docker/library/postgres:16-alpine
+    container_name: job-reliability-pg
+    environment:
+      POSTGRES_USER: tunesmith
+      POSTGRES_PASSWORD: tunesmith_local
+      POSTGRES_DB: tunesmith
+    ports:
+      - "127.0.0.1:55433:5432"
+    command: ["postgres", "-c", "max_connections=100"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tunesmith"]
+      interval: 1s
+      timeout: 3s
+      retries: 30

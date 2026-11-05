@@ -1,0 +1,225 @@
+{
+  "mechanism": "c-cpu-block",
+  "title": "Synchronous CPU work blocks the event loop",
+  "poolMax": 5,
+  "durationMs": 6929,
+  "outcomes": {
+    "ok": 69,
+    "poolTimeouts": 33,
+    "queryTimeouts": 0,
+    "otherErrors": 0,
+    "attempts": 102,
+    "jobs": 102,
+    "paidSubmissions": 0,
+    "paidPerJob": 0,
+    "retryAmplification": 1
+  },
+  "pool": {
+    "peakWaiting": 6,
+    "peakCheckedOut": 5,
+    "samples": 30,
+    "afterLoad": {
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    }
+  },
+  "eventLoop": {
+    "p50ms": 11,
+    "p99ms": 905.4,
+    "maxMs": 911.2,
+    "heartbeatsLate": 6,
+    "heartbeatsTotal": 18
+  },
+  "pgStatActivity": {
+    "peakIdleInTransaction": 0,
+    "peakIdle": 5,
+    "peakActive": 0,
+    "peakLockWaits": 0,
+    "oldestXactMs": 0,
+    "snapshots": 30
+  },
+  "recovered": true,
+  "timeline": [
+    {
+      "t": 100,
+      "total": 1,
+      "idle": 1,
+      "waiting": 0
+    },
+    {
+      "t": 201,
+      "total": 1,
+      "idle": 1,
+      "waiting": 0
+    },
+    {
+      "t": 1154,
+      "total": 5,
+      "idle": 0,
+      "waiting": 5
+    },
+    {
+      "t": 1255,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 1355,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 2309,
+      "total": 5,
+      "idle": 0,
+      "waiting": 6
+    },
+    {
+      "t": 2409,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 2510,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 3465,
+      "total": 5,
+      "idle": 0,
+      "waiting": 6
+    },
+    {
+      "t": 3566,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 3666,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 4618,
+      "total": 5,
+      "idle": 0,
+      "waiting": 6
+    },
+    {
+      "t": 4718,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 4818,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 5771,
+      "total": 5,
+      "idle": 0,
+      "waiting": 6
+    },
+    {
+      "t": 5872,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 5972,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 6928,
+      "total": 5,
+      "idle": 0,
+      "waiting": 5
+    },
+    {
+      "t": 7029,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 7129,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 7230,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 7330,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 7431,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 7531,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 7632,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 7732,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 7832,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 7933,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 8034,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    },
+    {
+      "t": 8134,
+      "total": 5,
+      "idle": 5,
+      "waiting": 0
+    }
+  ]
+}

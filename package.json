@@ -1,0 +1,33 @@
+{
+  "name": "job-reliability-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "incident": "tsx scripts/incident/all.ts",
+    "incident:a": "tsx scripts/incident/a-hold-tx.ts",
+    "incident:b": "tsx scripts/incident/b-leak.ts",
+    "incident:c": "tsx scripts/incident/c-cpu-block.ts",
+    "incident:d": "tsx scripts/incident/d-retry-storm.ts",
+    "mutants": "tsx scripts/mutants.ts",
+    "chaos": "bash scripts/chaos.sh",
+    "site": "tsx scripts/build-site.ts"
+  },
+  "dependencies": {
+    "pg": "^8.23.1",
+    "pg-boss": "^12.38.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/pg": "^8.23.1",
+    "fast-check": "^4.10.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}

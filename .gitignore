@@ -1,0 +1,6 @@
+node_modules
+.env*
+.vercel
+results/raw
+*.log
+results/vitest.json

@@ -1,0 +1,69 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  reliability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: tunesmith
+          POSTGRES_PASSWORD: tunesmith_local
+          POSTGRES_DB: tunesmith
+        ports:
+          - 55433:5432
+        options: >-
+          --health-cmd "pg_isready -U tunesmith"
+          --health-interval 2s
+          --health-timeout 3s
+          --health-retries 30
+    env:
+      PROPERTY_RUNS: "25"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - name: Mutation check (remove each safeguard, require a failure)
+        run: npm run mutants
+      - name: Full suite (chaos, property, pool, pg-boss, broken mode, incidents)
+        run: npm test
+      - name: Incident evidence summary
+        run: npm run incident
+      - name: Build results page
+        run: npm run site
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: results
+          path: |
+            results/
+            evidence/
+      - name: Publish results to the page
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "Cryptocurrencydev"
+          git config user.email "Cryptocurrencydev@users.noreply.github.com"
+          git add site results evidence
+          git diff --cached --quiet && exit 0
+          git commit -m "Update results from CI run ${{ github.run_number }} [skip ci]"
+          git pull --rebase origin main
+          git push origin HEAD:main
