@@ -102,11 +102,14 @@ const mutants: Mutant[] = [
   },
 ];
 
-const vitest = (m: Mutant) =>
-  spawnSync('npx', ['vitest', 'run', ...m.tests, '--reporter=dot', ...(m.filter ? ['-t', m.filter] : [])], {
+const vitest = (m: Mutant) => {
+  const r = spawnSync('npx', ['vitest', 'run', ...m.tests, '--reporter=dot', ...(m.filter ? ['-t', m.filter] : [])], {
     encoding: 'utf8',
-    env: { ...process.env, NO_RECORD: '1' },
+    env: { ...process.env, NO_RECORD: '1', NO_COLOR: '1' },
   });
+  // CI forces colour on, so strip it before matching the summary line.
+  return { status: r.status, stdout: r.stdout.replace(/\x1b\[[0-9;]*m/g, '') };
+};
 
 const results: { name: string; killed: boolean }[] = [];
 for (const m of mutants) {
