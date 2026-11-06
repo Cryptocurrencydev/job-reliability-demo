@@ -19,6 +19,7 @@
     "site": "tsx scripts/build-site.ts"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "pg": "^8.23.1",
     "pg-boss": "^12.38.1"
   },

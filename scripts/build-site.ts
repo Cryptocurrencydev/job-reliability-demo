@@ -74,6 +74,10 @@ const html = `<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tunesmith job reliability results</title>
 <meta name="description" content="Test evidence that paid music generation jobs are never lost and never charged twice, across real process kills.">
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 <style>
 :root{--ink:#17181c;--mute:#5d616b;--line:#dcdde1;--paper:#fbfaf7;--card:#fff;--good:#0b6b4f;--bad:#b3261e;--accent:#3d3a8c}
 @media (prefers-color-scheme:dark){:root{--ink:#ecebe6;--mute:#a2a5ae;--line:#33353c;--paper:#141519;--card:#1b1c21;--good:#55c9a0;--bad:#f2857c;--accent:#a9a6f2}}
