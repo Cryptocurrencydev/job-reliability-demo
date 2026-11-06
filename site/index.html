@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tunesmith job reliability results</title>
 <meta name="description" content="Test evidence that paid music generation jobs are never lost and never charged twice, across real process kills.">
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 <style>
 :root{--ink:#17181c;--mute:#5d616b;--line:#dcdde1;--paper:#fbfaf7;--card:#fff;--good:#0b6b4f;--bad:#b3261e;--accent:#3d3a8c}
 @media (prefers-color-scheme:dark){:root{--ink:#ecebe6;--mute:#a2a5ae;--line:#33353c;--paper:#141519;--card:#1b1c21;--good:#55c9a0;--bad:#f2857c;--accent:#a9a6f2}}
@@ -45,12 +49,12 @@ footer{max-width:920px;margin:0 auto;padding:24px 16px 48px;font-size:14px;color
 <div class="eyebrow">Tunesmith, a fictional AI music app</div>
 <h1>No job lost. No job paid for twice.</h1>
 <p>Workers were killed at every step of a paid music generation job, then restarted. This page is generated from the raw output of the latest test run, including the runs where the protections were deliberately switched off.</p>
-<p class="mute small">Run 2026-11-05 19:03 UTC, commit 51d1d7a. <a href="https://github.com/Cryptocurrencydev/job-reliability-demo/actions/runs/42089386799">See the CI run</a>. <a href="https://github.com/Cryptocurrencydev/job-reliability-demo">Source and playbook</a>.</p>
+<p class="mute small">Run 2026-11-06 22:17 UTC, commit 84392bb. <a href="https://github.com/Cryptocurrencydev/job-reliability-demo/actions/runs/42302908429">See the CI run</a>. <a href="https://github.com/Cryptocurrencydev/job-reliability-demo">Source and playbook</a>.</p>
 
 <div class="stats">
   <div class="stat"><b class="good">88/88</b><span>tests passed</span></div>
   <div class="stat"><b>107</b><span>real SIGKILLs in the property test</span></div>
-  <div class="stat"><b>140</b><span>random jobs, 25 scenarios</span></div>
+  <div class="stat"><b>138</b><span>random jobs, 25 scenarios</span></div>
   <div class="stat"><b>10/10</b><span>safeguards removed and caught</span></div>
 </div>
 
@@ -70,41 +74,41 @@ footer{max-width:920px;margin:0 auto;padding:24px 16px 48px;font-size:14px;color
 <tr><td>Jobs that hit a connection timeout</td><td class="n bad">36</td><td class="n good">0</td></tr>
 <tr><td>Provider calls in flight at once, peak</td><td class="n">4</td><td class="n">20</td></tr>
 <tr><td>Connections idle in transaction, peak</td><td class="n bad">4</td><td class="n good">0</td></tr>
-<tr><td>Pool waiting count, average</td><td class="n">14.84</td><td class="n">2.44</td></tr>
+<tr><td>Pool waiting count, average</td><td class="n">14.95</td><td class="n">2.4</td></tr>
 <tr><td>Pool waiting count, peak</td><td class="n">16</td><td class="n">16</td></tr>
 </tbody></table></div>
 <p class="mute small" style="margin-top:12px">Safe mode has more provider calls in flight than connections exist, so none of those calls can be holding one.</p>
 
 <h2>Four ways to get the same symptoms</h2>
 <p class="mute">Each mechanism reproduced on purpose. The line is the number of requests waiting for a connection. The differences between these cards are how you tell them apart in a real incident.</p>
-<div class="grid"><div class="card"><h3>Transaction held open across the provider HTTP call</h3><svg viewBox="0 0 220 44" role="img" aria-label="Pool waiting count over 10 seconds, peak 14"><polyline points="2.1,43.0 4.3,43.0 6.4,43.0 8.5,37.4 10.7,31.8 12.8,29.0 15.0,23.4 17.1,17.8 19.2,15.0 21.4,9.4 23.5,3.8 25.6,6.6 27.8,6.6 29.9,3.8 32.1,6.6 34.2,6.6 36.3,3.8 38.5,6.6 40.6,12.2 42.7,15.0 44.9,20.6 47.0,26.2 49.1,29.0 51.3,34.6 53.4,40.2 55.5,43.0 57.7,43.0 59.8,43.0 62.0,43.0 64.1,43.0 66.2,43.0 68.4,43.0 70.5,43.0 72.6,43.0 74.8,43.0 76.9,43.0 79.1,43.0 81.2,43.0 83.3,43.0 85.4,43.0 87.6,43.0 89.7,43.0 91.8,43.0 94.0,43.0 96.1,43.0 98.2,43.0 100.4,43.0 102.5,43.0 104.7,43.0 106.8,43.0 108.9,43.0 111.1,43.0 113.2,43.0 115.4,43.0 117.5,43.0 119.6,43.0 121.8,43.0 123.9,43.0 126.1,43.0 128.2,43.0 130.3,43.0 132.4,43.0 134.6,43.0 136.7,43.0 138.9,43.0 141.0,43.0 143.1,43.0 145.3,43.0 147.4,43.0 149.5,43.0 151.6,43.0 153.8,43.0 155.9,43.0 158.1,43.0 160.2,43.0 162.3,43.0 164.5,43.0 166.6,43.0 168.7,43.0 170.9,43.0 173.0,43.0 175.1,43.0 177.3,43.0 179.4,43.0 181.5,43.0 183.7,43.0 185.8,43.0 188.0,43.0 190.1,43.0 192.2,43.0 194.4,43.0 196.5,43.0 198.6,43.0 200.8,43.0 202.9,43.0 205.1,43.0 207.2,43.0 209.3,43.0 211.5,43.0 213.6,43.0 215.7,43.0 217.9,43.0 220.0,43.0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><dl>
+<div class="grid"><div class="card"><h3>Transaction held open across the provider HTTP call</h3><svg viewBox="0 0 220 44" role="img" aria-label="Pool waiting count over 10 seconds, peak 14"><polyline points="2.1,43.0 4.2,43.0 6.4,43.0 8.5,37.4 10.7,31.8 12.8,29.0 14.9,23.4 17.1,17.8 19.2,15.0 21.4,9.4 23.5,3.8 25.6,6.6 27.8,6.6 29.9,3.8 32.0,6.6 34.2,6.6 36.3,3.8 38.4,6.6 40.5,12.2 42.7,15.0 44.8,20.6 46.9,26.2 49.1,29.0 51.2,34.6 53.4,40.2 55.5,43.0 57.6,43.0 59.8,43.0 61.9,43.0 64.0,43.0 66.1,43.0 68.3,43.0 70.4,43.0 72.6,43.0 74.7,43.0 76.8,43.0 79.0,43.0 81.1,43.0 83.2,43.0 85.4,43.0 87.5,43.0 89.7,43.0 91.8,43.0 93.9,43.0 96.0,43.0 98.2,43.0 100.3,43.0 102.5,43.0 104.6,43.0 106.7,43.0 108.9,43.0 111.0,43.0 113.2,43.0 115.3,43.0 117.5,43.0 119.6,43.0 121.8,43.0 123.9,43.0 126.0,43.0 128.2,43.0 130.3,43.0 132.4,43.0 134.6,43.0 136.7,43.0 138.8,43.0 140.9,43.0 143.1,43.0 145.2,43.0 147.3,43.0 149.5,43.0 151.6,43.0 153.8,43.0 155.9,43.0 158.1,43.0 160.2,43.0 162.3,43.0 164.5,43.0 166.6,43.0 168.7,43.0 170.9,43.0 173.0,43.0 175.1,43.0 177.2,43.0 179.4,43.0 181.5,43.0 183.7,43.0 185.8,43.0 187.9,43.0 190.1,43.0 192.2,43.0 194.4,43.0 196.5,43.0 198.6,43.0 200.8,43.0 202.9,43.0 205.0,43.0 207.2,43.0 209.3,43.0 211.4,43.0 213.6,43.0 215.7,43.0 217.9,43.0 220.0,43.0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><dl>
 <dt>Timeouts</dt><dd>24</dd>
 <dt>Healed without restart</dt><dd class="">yes</dd>
-<dt>Idle in transaction, peak</dt><dd>2</dd>
+<dt>Idle in transaction, peak</dt><dd>1</dd>
 <dt>Lock waits, peak</dt><dd>4</dd>
-<dt>Event loop p99</dt><dd>11.5ms</dd>
+<dt>Event loop p99</dt><dd>10.6ms</dd>
 <dt>Paid per job</dt><dd>0.2</dd>
-</dl></div><div class="card"><h3>Connection leak on an error path</h3><svg viewBox="0 0 220 44" role="img" aria-label="Pool waiting count over 5 seconds, peak 14"><polyline points="4.5,43.0 9.0,43.0 13.5,43.0 17.9,43.0 22.5,43.0 26.9,43.0 31.4,43.0 35.9,40.2 40.4,37.4 44.8,31.8 49.4,26.2 53.8,23.4 58.3,17.8 62.8,12.2 67.3,9.4 71.8,6.6 76.3,3.8 80.8,6.6 85.3,6.6 89.7,3.8 94.2,6.6 98.7,9.4 103.2,12.2 107.7,17.8 112.2,23.4 116.7,26.2 121.2,31.8 125.6,37.4 130.2,40.2 134.7,43.0 139.1,43.0 143.6,43.0 148.1,43.0 152.6,43.0 157.0,43.0 161.6,43.0 166.1,43.0 170.6,43.0 175.1,43.0 179.6,43.0 184.1,43.0 188.5,40.2 193.0,40.2 197.6,40.2 202.0,40.2 206.5,40.2 211.0,40.2 215.5,40.2 220.0,40.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><dl>
+</dl></div><div class="card"><h3>Connection leak on an error path</h3><svg viewBox="0 0 220 44" role="img" aria-label="Pool waiting count over 5 seconds, peak 14"><polyline points="4.5,43.0 9.0,43.0 13.5,43.0 18.0,43.0 22.5,43.0 27.0,43.0 31.5,43.0 36.0,40.2 40.4,37.4 44.9,31.8 49.4,26.2 53.9,23.4 58.4,17.8 62.9,12.2 67.4,9.4 71.9,6.6 76.4,3.8 80.8,6.6 85.3,6.6 89.8,3.8 94.3,6.6 98.8,9.4 103.3,12.2 107.7,17.8 112.2,23.4 116.7,26.2 121.2,31.8 125.7,37.4 130.2,40.2 134.7,43.0 139.1,43.0 143.7,43.0 148.2,43.0 152.7,43.0 157.2,43.0 161.7,43.0 166.2,43.0 170.6,43.0 175.1,43.0 179.6,43.0 184.1,40.2 188.6,40.2 193.1,40.2 197.5,40.2 202.1,40.2 206.5,40.2 211.0,40.2 215.6,40.2 220.0,43.0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><dl>
 <dt>Timeouts</dt><dd>23</dd>
 <dt>Healed without restart</dt><dd class="bad">no</dd>
 <dt>Idle in transaction, peak</dt><dd>0</dd>
 <dt>Lock waits, peak</dt><dd>0</dd>
-<dt>Event loop p99</dt><dd>11.4ms</dd>
+<dt>Event loop p99</dt><dd>10.8ms</dd>
 <dt>Paid per job</dt><dd>0.22</dd>
-</dl></div><div class="card"><h3>Synchronous CPU work blocks the event loop</h3><svg viewBox="0 0 220 44" role="img" aria-label="Pool waiting count over 8 seconds, peak 6"><polyline points="2.7,43.0 5.4,43.0 31.8,29.0 34.4,43.0 37.1,43.0 62.8,26.2 65.5,43.0 68.1,43.0 93.7,37.4 96.3,43.0 99.0,43.0 125.0,29.0 127.7,43.0 130.3,43.0 156.5,26.2 159.2,43.0 161.9,43.0 187.8,29.0 190.5,43.0 193.2,43.0 195.9,43.0 198.6,43.0 201.2,43.0 203.9,43.0 206.6,43.0 209.3,43.0 212.0,43.0 214.7,43.0 217.3,43.0 220.0,43.0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><dl>
-<dt>Timeouts</dt><dd>28</dd>
+</dl></div><div class="card"><h3>Synchronous CPU work blocks the event loop</h3><svg viewBox="0 0 220 44" role="img" aria-label="Pool waiting count over 8 seconds, peak 6"><polyline points="2.7,43.0 5.4,43.0 31.5,29.0 34.1,43.0 36.8,43.0 62.7,26.2 65.4,43.0 68.1,43.0 94.3,26.2 96.9,43.0 99.6,43.0 125.1,26.2 127.8,43.0 130.5,43.0 156.4,34.6 159.1,43.0 161.8,43.0 187.8,29.0 190.5,43.0 193.2,43.0 195.9,43.0 198.5,43.0 201.2,43.0 203.9,43.0 206.6,43.0 209.3,43.0 212.0,43.0 214.6,43.0 217.3,43.0 220.0,43.0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><dl>
+<dt>Timeouts</dt><dd>30</dd>
 <dt>Healed without restart</dt><dd class="">yes</dd>
 <dt>Idle in transaction, peak</dt><dd>0</dd>
 <dt>Lock waits, peak</dt><dd>0</dd>
-<dt>Event loop p99</dt><dd>922.2ms</dd>
+<dt>Event loop p99</dt><dd>922.7ms</dd>
 <dt>Paid per job</dt><dd>0</dd>
-</dl></div><div class="card"><h3>Timeouts trigger immediate retries that take more connections</h3><svg viewBox="0 0 220 44" role="img" aria-label="Pool waiting count over 6 seconds, peak 15"><polyline points="3.8,43.0 7.5,43.0 11.3,40.2 15.2,34.6 19.0,29.0 22.8,23.4 26.5,17.8 30.3,12.2 34.1,6.6 37.9,1.0 41.7,1.0 45.5,1.0 49.3,1.0 53.1,1.0 56.8,1.0 60.6,1.0 64.5,1.0 68.2,1.0 72.0,1.0 75.8,1.0 79.6,1.0 83.5,1.0 87.2,1.0 91.0,1.0 94.8,1.0 98.6,1.0 102.4,1.0 106.2,1.0 110.0,1.0 113.8,3.8 117.5,6.6 121.3,9.4 125.2,9.4 128.9,15.0 132.7,23.4 136.5,31.8 140.3,34.6 144.1,34.6 147.9,34.6 151.7,34.6 155.5,40.2 159.3,43.0 163.1,43.0 166.9,43.0 170.7,43.0 174.5,43.0 178.3,43.0 182.1,43.0 185.9,43.0 189.7,43.0 193.5,43.0 197.3,43.0 201.0,43.0 204.8,43.0 208.6,43.0 212.5,43.0 216.2,43.0 220.0,43.0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><dl>
-<dt>Timeouts</dt><dd>76</dd>
+</dl></div><div class="card"><h3>Timeouts trigger immediate retries that take more connections</h3><svg viewBox="0 0 220 44" role="img" aria-label="Pool waiting count over 6 seconds, peak 15"><polyline points="3.7,43.0 7.5,43.0 11.2,40.2 14.9,34.6 18.8,29.0 22.5,23.4 26.2,17.8 30.0,12.2 33.7,6.6 37.4,1.0 41.1,1.0 44.9,1.0 48.6,1.0 52.4,1.0 56.1,1.0 59.8,1.0 63.5,1.0 67.2,1.0 70.9,1.0 74.6,1.0 78.4,1.0 82.1,1.0 85.8,1.0 89.6,1.0 93.3,1.0 97.0,3.8 100.7,3.8 104.4,3.8 108.1,3.8 111.9,6.6 115.6,12.2 119.3,12.2 123.1,12.2 126.8,15.0 130.5,17.8 134.2,23.4 138.0,29.0 141.7,29.0 145.5,34.6 149.2,37.4 152.9,43.0 156.7,43.0 160.4,43.0 164.2,43.0 167.8,43.0 171.6,43.0 175.3,43.0 179.0,43.0 182.7,43.0 186.4,43.0 190.2,43.0 193.9,43.0 197.7,43.0 201.4,43.0 205.1,43.0 208.8,43.0 212.5,43.0 216.3,43.0 220.0,43.0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><dl>
+<dt>Timeouts</dt><dd>77</dd>
 <dt>Healed without restart</dt><dd class="">yes</dd>
 <dt>Idle in transaction, peak</dt><dd>5</dd>
 <dt>Lock waits, peak</dt><dd>0</dd>
-<dt>Event loop p99</dt><dd>11.2ms</dd>
-<dt>Paid per job</dt><dd>2.2</dd>
+<dt>Event loop p99</dt><dd>11.6ms</dd>
+<dt>Paid per job</dt><dd>2.15</dd>
 </dl></div></div>
 
 <h2>Do the tests protect anything?</h2>
